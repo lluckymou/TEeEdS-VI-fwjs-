@@ -1,0 +1,16 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "../App.svelte",
+    "../TabArea.svelte",
+    "../TabButton.svelte"
+  ],
+  "sourcesContent": [
+    "<script>\n\timport Tabs from \"./Tabs.svelte\";\n</script>\n\n<style>\n  main {\n    font-family: sans-serif;\n  }\n</style>\n\n<main>\n\t<Tabs />\n</main>",
+    "<script>\n  export var content;\n</script>\n\n<style>\n  .tab-content {\n    margin: 5px;\n    border: 1.5px solid #aaa;\n    background: #f0f0f0;\n    border-radius: 5px;\n    font-size: 13pt;\n    padding: 20px;\n  }\n</style>\n\n<div class=\"tab-content\">\n  {content}\n</div>",
+    "<script>\n  import { createEventDispatcher } from \"svelte\";\n\n  var dispatcher = createEventDispatcher();\n  export var name, selected, id;\n\n  export function onClick(number) {\n    dispatcher(\"selection\", number);\n  }\n</script>\n\n<style>\n  button {\n    margin: 0 5px;\n    background: #ccc;\n    border-radius: 5px;\n    border: 1.5px solid #777;\n    padding: 5px 30px;\n    font-size: 12pt;\n  }\n  button.selected {\n    font-weight: bold;\n    background: #aaa;\n  }\n</style>\n\n<button\n    class={selected ? 'selected' : {id}}\n    name={name}\n    on:click={e => onClick(id)}\n>\n    { name }\n</button>\n"
+  ],
+  "names": [],
+  "mappings": "AAKE,IAAI,cAAC,CAAC,AACJ,WAAW,CAAE,UAAU,AACzB,CAAC;ACFD,YAAY,eAAC,CAAC,AACZ,MAAM,CAAE,GAAG,CACX,MAAM,CAAE,KAAK,CAAC,KAAK,CAAC,IAAI,CACxB,UAAU,CAAE,OAAO,CACnB,aAAa,CAAE,GAAG,CAClB,SAAS,CAAE,IAAI,CACf,OAAO,CAAE,IAAI,AACf,CAAC;ACAD,MAAM,cAAC,CAAC,AACN,MAAM,CAAE,CAAC,CAAC,GAAG,CACb,UAAU,CAAE,IAAI,CAChB,aAAa,CAAE,GAAG,CAClB,MAAM,CAAE,KAAK,CAAC,KAAK,CAAC,IAAI,CACxB,OAAO,CAAE,GAAG,CAAC,IAAI,CACjB,SAAS,CAAE,IAAI,AACjB,CAAC,AACD,MAAM,SAAS,cAAC,CAAC,AACf,WAAW,CAAE,IAAI,CACjB,UAAU,CAAE,IAAI,AAClB,CAAC"
+}

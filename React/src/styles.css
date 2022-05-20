@@ -1,0 +1,25 @@
+.App {
+  font-family: sans-serif;
+}
+
+button {
+  margin: 0 5px;
+  background: #ccc;
+  border-radius: 5px;
+  border: 1.5px solid #777;
+  padding: 5px 30px;
+  font-size: 12pt;
+}
+button.selected {
+  font-weight: bold;
+  background: #aaa;
+}
+
+.tab-content {
+  margin: 5px;
+  border: 1.5px solid #aaa;
+  background: #f0f0f0;
+  border-radius: 5px;
+  font-size: 13pt;
+  padding: 20px;
+}
