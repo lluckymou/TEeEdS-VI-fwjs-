@@ -438,7 +438,7 @@ var app = (function () {
     			t = text(/*name*/ ctx[0]);
     			attr_dev(button, "class", button_class_value = "" + (null_to_empty(/*selected*/ ctx[1] ? 'selected' : { id: /*id*/ ctx[2] }) + " svelte-tj0xqo"));
     			attr_dev(button, "name", /*name*/ ctx[0]);
-    			add_location(button, file, 26, 0, 467);
+    			add_location(button, file, 26, 0, 493);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -604,7 +604,7 @@ var app = (function () {
     			div = element("div");
     			t = text(/*content*/ ctx[0]);
     			attr_dev(div, "class", "tab-content svelte-163h9pz");
-    			add_location(div, file$1, 15, 0, 217);
+    			add_location(div, file$1, 15, 0, 232);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -789,7 +789,7 @@ var app = (function () {
     			t = space();
     			create_component(tabarea.$$.fragment);
     			attr_dev(div, "class", "tabs");
-    			add_location(div, file$2, 34, 0, 538);
+    			add_location(div, file$2, 34, 0, 572);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -961,7 +961,7 @@ var app = (function () {
     			main = element("main");
     			create_component(tabs.$$.fragment);
     			attr_dev(main, "class", "svelte-6hcj36");
-    			add_location(main, file$3, 10, 0, 115);
+    			add_location(main, file$3, 10, 0, 125);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
