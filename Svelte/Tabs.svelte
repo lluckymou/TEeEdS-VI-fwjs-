@@ -2,25 +2,7 @@
   import TabButton from "./TabButton.svelte";
   import TabArea from "./TabArea.svelte";
 
-  var tabs = [
-    {
-      name: "tab 1",
-      content: "Texto do primeiro tab"
-    },
-    {
-      name: "tab 2",
-      content: "Texto do segundo tab"
-    },
-    {
-      name: "tab 3",
-      content: "Texto do terceiro tab"
-    },
-    {
-      name: "tab 4",
-      content: "Texto do quarto tab"
-    }
-  ];
-
+  export let tabs = []
   var selected = 0;
 
   function tabClick(id) {
@@ -29,7 +11,9 @@
 </script>
 
 <style>
-  /* Tabs não possui estilos */
+  * {
+    font-family: sans-serif;
+  }
 </style>
 
 <div class="tabs">
