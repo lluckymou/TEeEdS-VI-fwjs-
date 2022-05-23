@@ -22,27 +22,12 @@ export default {
     TabArea,
     TabButton
   },
+  props: {
+    tabs: { type: Array }
+  },
   data() {
     return {
-      selected: 0,
-      tabs: [
-        {
-          name: "tab 1",
-          content: "Texto do primeiro tab"
-        },
-        {
-          name: "tab 2",
-          content: "Texto do segundo tab"
-        },
-        {
-          name: "tab 3",
-          content: "Texto do terceiro tab"
-        },
-        {
-          name: "tab 4",
-          content: "Texto do quarto tab"
-        }
-      ]
+      selected: 0
     }
   },
   methods: {

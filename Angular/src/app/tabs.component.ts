@@ -1,6 +1,6 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
-interface tab {
+export interface tab {
   name: string;
   content: string;
 }
@@ -24,24 +24,7 @@ interface tab {
 })
 // Eu quero essa linha vazia e o codesandbox remove, então esse comentário é o separador
 export class TabsComponent {
-  tabs: tab[] = [
-    {
-      name: "tab 1",
-      content: "Texto do primeiro tab"
-    },
-    {
-      name: "tab 2",
-      content: "Texto do segundo tab"
-    },
-    {
-      name: "tab 3",
-      content: "Texto do terceiro tab"
-    },
-    {
-      name: "tab 4",
-      content: "Texto do quarto tab"
-    }
-  ];
+  @Input() tabs!: tab[];
 
   selected = 0;
 
