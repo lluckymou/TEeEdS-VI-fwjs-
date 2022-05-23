@@ -1,15 +1,13 @@
 import { Component } from '@angular/core';
-import { tab } from './tabs.component';
 
 @Component({
   selector: 'app-root',
-  template: '<app-tabs [tabs]="tabs"></app-tabs>',
+  template: '<tabs [tabs]="tabs"></tabs>',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'Angular Tabs';
-
-  tabs: tab[] = [
+  tabs = [
     {
       name: "tab 1",
       content: "Texto do primeiro tab"

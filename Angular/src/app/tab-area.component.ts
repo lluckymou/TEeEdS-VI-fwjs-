@@ -1,10 +1,10 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 @Component({
-  selector: "app-tab-area",
+  selector: "tab-area",
   template: `
     <div class="tab-content">
-      <ng-content></ng-content>
+      {{content}}
     </div>
   `,
   styles: [
@@ -21,4 +21,6 @@ import { Component } from "@angular/core";
   ]
 })
 // Eu quero essa linha vazia e o codesandbox remove, então esse comentário é o separador
-export class TabAreaComponent {}
+export class TabAreaComponent {
+  @Input() content!: string;
+}

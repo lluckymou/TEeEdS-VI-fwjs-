@@ -7,7 +7,7 @@ export interface tabButton {
 }
 
 @Component({
-  selector: "app-tab-button",
+  selector: "tab-button",
   template: `<button
     [class]="selected ? 'selected' : ''"
     [name]="name"
