@@ -219,7 +219,7 @@
         },
         {
             "name": "TabsComponent",
-            "id": "component-TabsComponent-ce64c992e043e70d3a5ee52ea53fb69a7ec6abaf84d9bd7afe6ec2b1028a6ccef6e98e7fe8b05b514209dfe4872afef46cb551eebf0de7514a1f592cdd15e2fd",
+            "id": "component-TabsComponent-4f72d09019bebe9d63ae33845fb0f4aa2bce5e5997a07a6ab876ebbd232f2771fbfa43fd252669abf825db4ad4e28e9b6a1670f3d1976384dbda7f38363da282",
             "file": "src/app/tabs.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -273,7 +273,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from \"@angular/core\";\r\n\r\n@Component({\r\n  selector: \"tabs\",\r\n  template: `<div class=\"tabs\">\r\n    <tab-button\r\n      *ngFor=\"let item of tabs; let i = index\"\r\n      [id]=\"i\"\r\n      [name]=\"item.name\"\r\n      [selected]=\"i === selected\"\r\n      (onClick)=\"tabClick(i)\"\r\n    >\r\n    </tab-button>\r\n\r\n    <tab-area [content]=\"tabs[selected].content\">\r\n    </tab-area>\r\n  </div>`\r\n})\r\n// Eu quero essa linha vazia e o codesandbox remove, então esse comentário é o separador\r\nexport class TabsComponent {\r\n  @Input() tabs!: any;\r\n\r\n  selected = 0;\r\n\r\n  tabClick = (id: number) => {\r\n    this.selected = id === undefined ? 0 : id;\r\n  };\r\n}\r\n",
+            "sourceCode": "import { Component, Input } from \"@angular/core\";\r\n\r\n@Component({\r\n  selector: \"tabs\",\r\n  template: `<div class=\"tabs\">\r\n    <tab-button\r\n      *ngFor=\"let item of tabs; let i = index\"\r\n      [id]=\"i\"\r\n      [name]=\"item.name\"\r\n      [selected]=\"i === selected\"\r\n      (onClick)=\"tabClick(i)\"\r\n    >\r\n    </tab-button>\r\n\r\n    <tab-area [content]=\"tabs[selected].content\">\r\n    </tab-area>\r\n  </div>`\r\n})\r\n\r\nexport class TabsComponent {\r\n  @Input() tabs!: any;\r\n\r\n  selected = 0;\r\n\r\n  tabClick = (id: number) => {\r\n    this.selected = id === undefined ? 0 : id;\r\n  };\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": ""
@@ -370,7 +370,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/tabs.stories.ts",
+                "file": "src/stories/tab-button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -380,21 +380,11 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/tab-button.stories.ts",
+                "file": "src/stories/tabs.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "(args) => ({\r\n    props: args,\r\n})"
-            },
-            {
-                "name": "environment",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "object",
-                "defaultValue": "{\n  production: true\n}"
             },
             {
                 "name": "environment",
@@ -405,6 +395,16 @@
                 "deprecationMessage": "",
                 "type": "object",
                 "defaultValue": "{\n  production: false\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.prod.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  production: true\n}"
             },
             {
                 "name": "name",
@@ -493,28 +493,6 @@
                     "type": "literal type"
                 }
             ],
-            "src/stories/tabs.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/tabs.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "(args) => ({\r\n    props: args,\r\n})"
-                },
-                {
-                    "name": "tabs",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/tabs.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "[]",
-                    "defaultValue": "[\r\n    { name: \"tab 1\", content: \"Texto do primeiro tab\" },\r\n    { name: \"tab 2\", content: \"Texto do segundo tab\" },\r\n    { name: \"tab 3\", content: \"Texto do terceiro tab\" },\r\n    { name: \"tab 4\", content: \"Texto do quarto tab\" }\r\n]"
-                }
-            ],
             "src/stories/tab-button.stories.ts": [
                 {
                     "name": "Default",
@@ -547,16 +525,26 @@
                     "defaultValue": "false"
                 }
             ],
-            "src/environments/environment.prod.ts": [
+            "src/stories/tabs.stories.ts": [
                 {
-                    "name": "environment",
+                    "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/environments/environment.prod.ts",
+                    "file": "src/stories/tabs.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "object",
-                    "defaultValue": "{\n  production: true\n}"
+                    "type": "Story",
+                    "defaultValue": "(args) => ({\r\n    props: args,\r\n})"
+                },
+                {
+                    "name": "tabs",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/tabs.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\r\n    { name: \"tab 1\", content: \"Texto do primeiro tab\" },\r\n    { name: \"tab 2\", content: \"Texto do segundo tab\" },\r\n    { name: \"tab 3\", content: \"Texto do terceiro tab\" },\r\n    { name: \"tab 4\", content: \"Texto do quarto tab\" }\r\n]"
                 }
             ],
             "src/environments/environment.ts": [
@@ -569,6 +557,18 @@
                     "deprecationMessage": "",
                     "type": "object",
                     "defaultValue": "{\n  production: false\n}"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  production: true\n}"
                 }
             ]
         },
