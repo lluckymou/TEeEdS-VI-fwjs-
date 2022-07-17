@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AppComponent } from './app.component';
+import { TabButtonComponent } from './tab-button.component';
 
-describe('AppComponent', () => {
-  let component: AppComponent;
-  let fixture: ComponentFixture<AppComponent>;
+describe('TabButtonComponent', () => {
+  let component: TabButtonComponent;
+  let fixture: ComponentFixture<TabButtonComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AppComponent ]
+      declarations: [ TabButtonComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AppComponent);
+    fixture = TestBed.createComponent(TabButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

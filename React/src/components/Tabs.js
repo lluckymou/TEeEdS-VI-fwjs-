@@ -9,15 +9,17 @@ export const Tabs = (props) => {
   const [selected, setSelected] = useState(0);
 
   return (
-    <div className="tabs">
-      {props.tabs.map((tab, i) => (
-        <TabButton
-          name={tab.name}
-          selected={i === selected}
-          onClick={() => setSelected(i)}
-          key={i}
-        />
-      ))}
+    <div className="tab-container">
+      <div className="tabs">
+        {props.tabs.map((tab, i) => (
+          <TabButton
+            name={tab.name}
+            selected={i === selected}
+            onClick={() => setSelected(i)}
+            key={i}
+          />
+        ))}
+      </div>
 
       <TabArea content={props.tabs[selected].content} />
     </div>

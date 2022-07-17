@@ -2,9 +2,10 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { TabsComponent } from "./tabs.component";
-import { TabButtonComponent } from "./tab-button.component";
-import { TabAreaComponent } from "./tab-area.component";
+import { TabsComponent } from './tabs/tabs.component';
+import { TabButtonComponent } from './tab-button/tab-button.component';
+import { TabAreaComponent } from './tab-area/tab-area.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,10 +14,8 @@ import { TabAreaComponent } from "./tab-area.component";
     TabButtonComponent,
     TabAreaComponent
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule, FormsModule, ReactiveFormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

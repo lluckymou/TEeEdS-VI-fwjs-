@@ -1,0 +1,77 @@
+<div class="App">
+
+  <div class="form-container">
+    <label class=" form-label">
+      Número Tabs:
+      <div class="form-content-tabs">
+        <input name="tabs" type="text" class="form-input" [(ngModel)]="tabsInput" required />
+        <button type="button" (click)="addNewFields()">
+          Adicionar
+        </button>
+      </div>
+    </label>
+    <form id="form" [formGroup]="tabsAddForm">
+      <div formArrayName="tabsInput">
+        <div class="form-content" *ngFor="let tabsInput of formArrayTabs.controls; index as i" [formGroupName]="i">
+          <label class="form-label">
+            Título:
+            <input formControlName="name" name="name" type="text" class="form-input" required />
+          </label>
+          <label class="form-label">
+            Conteúdo:
+            <input formControlName="content" name="content" type="text" class="form-input" required />
+          </label>
+          <button type="button" class="remove" (click)="removeTabField(i)">
+            Remover
+          </button>
+        </div>
+      </div>
+
+      <div>
+        <button class="form-submit" type="submit" (click)="saveTabs()">
+          Salvar
+        </button>
+        <span style="font-size: 13px; color: red;">
+          {{error}}
+        </span>
+      </div>
+    </form>
+  </div>
+
+  <!-- <form class="form-container" [formGroup]="materialAddForm" id="form">
+    <label class=" form-label">
+      Número Tabs:
+      <div class="form-content-tabs">
+        <input formControlName="tabs" name="tabs" type="text" class="form-input" required />
+        <button type="button" (click)="addSellerInput()">
+          Adicionar
+        </button>
+      </div>
+    </label>
+
+    <div formArrayName="buyInformation">
+      <div *ngFor="let buyInformation of formArrayBuyInformation.controls; let i = index" [formGroupName]="i"
+        class="form-content" key={index}>
+        <label class="form-label">
+          Título:
+          <input formControlName="name" name="name" type="text" class="form-input" required />
+        </label>
+        <label class="form-label">
+          Conteúdo:
+          <input formControlName="content" name="content" type="text" class="form-input" required />
+        </label>
+        <button type="button" class="remove" (click)="removeQuantity(i)">
+          Remover
+        </button>
+      </div>
+    </div>
+
+    <button class="form-submit" type="submit"  (click)="saveMaterial()">
+      Salvar
+    </button>
+  </form> -->
+
+
+
+  <tabs [tabs]="tabs"></tabs>
+</div>

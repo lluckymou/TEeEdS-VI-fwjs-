@@ -1,0 +1,8 @@
+<div class="tabs">
+  <tab-button *ngFor="let item of tabs; let i = index" [id]="i" [name]="item.name" [selected]="i === selected"
+    (onClick)="tabClick(i)">
+  </tab-button>
+
+  <tab-area [content]="tabs[selected].content">
+  </tab-area>
+</div>
